@@ -5,5 +5,5 @@ class Dog
     hash.each { |key, value| self.send("#{key}=", value) }
   end
   
-  
+  def 
 end
