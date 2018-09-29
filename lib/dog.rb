@@ -43,7 +43,9 @@ def save
    # dog.save
    # dog
  # end
-  
+  def self.create(dogs_hash)
+    dogs_hash.each { |dog| self.new() }
+  end
   
   
   def self.find_by_name(id)
