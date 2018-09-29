@@ -52,5 +52,5 @@ def save
     DB[:conn].execute(sql, id).map { |row| self.new_from_db(row) }.first
   end
   
-  
+
 end
