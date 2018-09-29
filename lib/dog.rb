@@ -2,7 +2,9 @@ class Dog
   attr_accessor :id, :name, :breed
   
   def initialize(name: name, breed: breed)
-    
+    dog = self.new(name: name, breed: breed)
+    dog.save
+    dog
   end
   
   def self.create_table
