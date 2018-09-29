@@ -78,5 +78,9 @@ def save
     DB[:conn].execute(sql, name).map { |row| self.new_from_db(row) }.first
   end
   
+  def update
+    sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+    DB[:conn].execute(sql, self.name, self.breed, self.id)
+  end
   
 end
