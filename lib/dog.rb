@@ -5,5 +5,15 @@ class Dog
     hash.each { |key, value| self.send("#{key}=", value) }
   end
   
-  def 
+ def self.create_table
+    sql = <<-SQL
+    CREATE TABLE IF NOT EXISTS students (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      grade TEXT
+    )
+    SQL
+
+    DB[:conn].execute(sql).map { |row| self.new_from_db(row) }
+  end
 end
