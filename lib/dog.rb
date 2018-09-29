@@ -56,10 +56,12 @@ def save
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       dog_data = song[0]
-      dog = self.new(dog_data[0], song_data[1], song_data[2])
+      dog = self.new(dog_data[0], dog_data[1], dog_data[2])
     else
-      song = self.create(name: name, album: album)
+      dog = self.create(name: name, breed: breed)
     end
-    song
-  end 
+    dog
+  end
+  
+  
 end
