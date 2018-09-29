@@ -2,6 +2,8 @@ class Dog
   attr_accessor :id, :name, :breed
   
   def initialize(hash)
-    hash.each { |key, value| self.send("#{key}=", value)
+    hash.each { |key, value| self.send("#{key}=", value) }
+  end
+  
   
 end
