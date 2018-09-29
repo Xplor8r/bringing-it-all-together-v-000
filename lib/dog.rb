@@ -39,7 +39,7 @@ def save
   end
   
   def self.create(hash)
-    hash.each { |key, value| self.new(hash) }
+    hash.each { |attributes| self.new(attributes) }
   end
   
   def self.find_by_name(id)
