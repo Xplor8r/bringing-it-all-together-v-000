@@ -38,8 +38,10 @@ def save
     self
   end
   
-  def self.create(hash)
-    hash.each { |attributes| self.new(attributes) }
+  def self.create()
+    dog = self.new(name: name, breed: breed)
+    dog.save
+    dog
   end
   
   def self.find_by_name(id)
