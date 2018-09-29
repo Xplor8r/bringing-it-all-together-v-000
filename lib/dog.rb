@@ -44,8 +44,8 @@ def save
    # dog
  # end
   def self.create(dogs_hash)
-    dogs_hash.each { |dog| self.new(dog) }
-    self.save
+    dog = dogs_hash.each { |dog| self.new(dog) }
+    dog.save
   end
   
   
