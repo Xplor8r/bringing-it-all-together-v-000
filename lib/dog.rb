@@ -38,16 +38,11 @@ def save
     self
   end
   
- # def self.create(name: name, breed: breed)
-  #  dog = self.new(name: name, breed: breed)
-   # dog.save
-   # dog
- # end
-  def self.create(dogs_hash)
-    dogs_hash.each { |attributes| dog = self.new(attributes) }
+  def self.create(name: name, breed: breed)
+    dog = self.new(name: name, breed: breed)
     dog.save
+    dog
   end
-  
   
   def self.find_by_name(id)
     sql = <<-SQL
